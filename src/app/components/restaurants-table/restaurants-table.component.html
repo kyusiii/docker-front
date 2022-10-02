@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Adresse</th>
+    <th>Moyenne</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let restaurant of restaurants" [appMoyenneColoration]="restaurant">
+    <td>{{restaurant.nom}}</td>
+    <td>{{restaurant.adresse}}</td>
+    <td *ngIf="restaurant.moyenne === -1">/</td>
+    <td *ngIf="restaurant.moyenne !== -1">{{restaurant.moyenne}}</td>
+    <td>
+      <button (click)="goToRestaurantDetail(restaurant)">Voir le détails</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,60 @@
+<form #RestaurantForm="ngForm" (ngSubmit)="onSubmit(RestaurantForm)">
+  <table>
+    <tr>
+      <th></th>
+      <th>Valeur</th>
+      <th>Erreur</th>
+    </tr>
+    <tr>
+      <td> Evaluateur </td>
+      <td>
+        <input name="evaluateur"
+               #evaluateur="ngModel"
+               [(ngModel)]="evaluateurInput"
+               required
+               minlength="2"
+               maxlength="50">
+      </td>
+      <td>
+        <span class="error" *ngIf="!evaluateur.valid && evaluateur.errors?.['required']">Ce champs est requis</span>
+        <span class="error" *ngIf="!evaluateur.valid && evaluateur.errors?.['minlength']">Ce champs est trop court</span>
+        <span class="error" *ngIf="!evaluateur.valid && evaluateur.errors?.['maxlength']">Ce champs est trop long</span>
+      </td>
+    </tr>
+    <tr>
+      <td> Commentaire </td>
+      <td>
+        <input name="commentaire"
+               #commentaire="ngModel"
+               [(ngModel)]="commentaireInput"
+               required
+               minlength="2"
+               maxlength="255">
+      </td>
+      <td>
+        <span class="error" *ngIf="!commentaire.valid && commentaire.errors?.['required']">Ce champs est requis</span>
+        <span class="error" *ngIf="!commentaire.valid && commentaire.errors?.['minlength']">Ce champs est trop court</span>
+        <span class="error" *ngIf="!commentaire.valid && commentaire.errors?.['maxlength']">Ce champs est long</span>
+      </td>
+    </tr>
+    <tr>
+      <td> Note </td>
+      <td>
+        <input type="number"
+               name="note"
+               #note="ngModel"
+               [(ngModel)]="noteInput"
+               required
+               min="0"
+               max="3">
+      </td>
+      <td>
+        <span class="error" *ngIf="!note.valid && note.errors?.['required']">Ce champs est requis</span>
+        <span class="error" *ngIf="!note.valid && note.errors?.['minlength']">Ce champs est trop court</span>
+        <span class="error" *ngIf="!note.valid && note.errors?.['maxlength']">Ce champs est long</span>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <button type="submit">Valider</button>
+</form>

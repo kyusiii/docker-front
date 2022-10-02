@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Auteur</th>
+    <th>Commentaire</th>
+    <th>Nombre d'étoiles</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let evaluation of evaluations">
+    <td>{{evaluation.evaluateur}}</td>
+    <td>{{evaluation.commentaire}}</td>
+    <td>{{evaluation.note}}</td>
+    <td>
+      <button (click)="onEvaluationDeleted(evaluation)">Supprimer l'évaluation</button>
+    </td>
+  </tr>
+</table>

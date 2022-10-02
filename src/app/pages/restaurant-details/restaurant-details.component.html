@@ -1,0 +1,15 @@
+<h3 *ngIf="hasIdAnError">L'ID du restaurant fourni n'est pas un entier positif</h3>
+<h3 *ngIf="restaurantDoesNotExist">Le restaurant n'existe pas</h3>
+<div *ngIf="restaurant">
+  <a routerLink="/restaurants">Retour à la lister des restaurants</a>
+  <h3>{{restaurant.nom}}</h3>
+  <h5>{{restaurant.adresse}}</h5>
+  <h3>Evaluations</h3>
+  <app-evaluation-table [evaluations]="restaurant.evaluations"
+                        (evaluationDeleted)="deleteEvaluation($event)">
+  </app-evaluation-table>
+  <h3>Ajouter une évaluation :</h3>
+  <app-evaluation-form (emitted)="addEvaluation($event)"></app-evaluation-form>
+  <h3>Editer le restaurant :</h3>
+  <app-restaurant-form [restaurant]="restaurant" (emitted)="updateRestaurant($event)"></app-restaurant-form>
+</div>

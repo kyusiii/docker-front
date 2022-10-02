@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+table {
+  min-width: 40%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 5px 5px 5px;
+}
+
+input {
+  width: 98%;
+}
+
+.error {
+  color: red;
+}

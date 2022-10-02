@@ -1,0 +1,10 @@
+<div *ngIf="errorWhileLoadingRestaurants">
+  <h3>Une erreur s'est produite lors de la récupération des restaurants</h3>
+</div>
+<div *ngIf="!errorWhileLoadingRestaurants">
+  <h3>Liste des restaurants : </h3>
+  <app-restaurants-table [restaurants]="restaurants"></app-restaurants-table>
+  <h3>Ajouter un restaurant : </h3>
+  <app-restaurant-form (emitted)="addRestaurant($event)"></app-restaurant-form>
+</div>
+

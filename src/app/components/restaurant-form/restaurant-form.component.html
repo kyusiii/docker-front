@@ -1,0 +1,30 @@
+<form #RestaurantForm="ngForm" (ngSubmit)="onSubmit(RestaurantForm)">
+  <table>
+    <tr>
+      <th></th>
+      <th>Valeur</th>
+      <th>Erreur</th>
+    </tr>
+    <tr>
+      <td> Nom </td>
+      <td><input name="nom" #nom="ngModel" [(ngModel)]="nomInput" required minlength="2" maxlength="90"></td>
+      <td>
+        <span class="error" *ngIf="!nom.valid && nom.errors?.['required']">Ce champs est requis</span>
+        <span class="error" *ngIf="!nom.valid && nom.errors?.['minlength']">Ce champs est trop court</span>
+        <span class="error" *ngIf="!nom.valid && nom.errors?.['maxlength']">Ce champs est trop long</span>
+      </td>
+    </tr>
+    <tr>
+      <td> Adresse </td>
+      <td><input name="adresse" #adresse="ngModel" [(ngModel)]="adresseInput" required minlength="2" maxlength="255">
+      </td>
+      <td>
+        <span class="error" *ngIf="!adresse.valid && adresse.errors?.['required']">Ce champs est requis</span>
+        <span class="error" *ngIf="!adresse.valid && adresse.errors?.['minlength']">Ce champs est trop court</span>
+        <span class="error" *ngIf="!adresse.valid && adresse.errors?.['maxlength']">Ce champs est long</span>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <button type="submit">Valider</button>
+</form>
