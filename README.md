@@ -18,6 +18,8 @@
 ```npm run build```
 => uses PROD env variables
 
+Generates the build in the dist folder
+
 ## Environment variabvles
 
 ### Dev / Local
