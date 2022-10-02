@@ -11,7 +11,7 @@
 ## Dev / Local
 
 ```npm run start```
-=> use DEV env variables
+=> uses DEV env variables
 
 ## Build
 
