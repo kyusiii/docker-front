@@ -8,10 +8,10 @@ import {RestaurantDetailsComponent} from './pages/restaurant-details/restaurant-
 import {EvaluationTableComponent} from './components/evaluation-table/evaluation-table.component';
 import {EvaluationFormComponent} from './components/evaluation-form/evaluation-form.component';
 import {HttpClientModule} from "@angular/common/http";
-import { RestaurantsTableComponent } from './components/restaurants-table/restaurants-table.component';
-import { RestaurantFormComponent } from './components/restaurant-form/restaurant-form.component';
+import {RestaurantsTableComponent} from './components/restaurants-table/restaurants-table.component';
+import {RestaurantFormComponent} from './components/restaurant-form/restaurant-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { MoyenneColorationDirective } from './directives/moyenne-coloration.directive';
+import {MoyenneColorationDirective} from './directives/moyenne-coloration.directive';
 
 @NgModule({
   declarations: [

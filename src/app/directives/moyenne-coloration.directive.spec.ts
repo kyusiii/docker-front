@@ -1,4 +1,4 @@
-import { MoyenneColorationDirective } from './moyenne-coloration.directive';
+import {MoyenneColorationDirective} from './moyenne-coloration.directive';
 
 describe('MoyenneColorationDirective', () => {
   it('should create an instance', () => {

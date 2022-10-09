@@ -17,7 +17,8 @@
       </td>
       <td>
         <span class="error" *ngIf="!evaluateur.valid && evaluateur.errors?.['required']">Ce champs est requis</span>
-        <span class="error" *ngIf="!evaluateur.valid && evaluateur.errors?.['minlength']">Ce champs est trop court</span>
+        <span class="error"
+              *ngIf="!evaluateur.valid && evaluateur.errors?.['minlength']">Ce champs est trop court</span>
         <span class="error" *ngIf="!evaluateur.valid && evaluateur.errors?.['maxlength']">Ce champs est trop long</span>
       </td>
     </tr>
@@ -33,7 +34,8 @@
       </td>
       <td>
         <span class="error" *ngIf="!commentaire.valid && commentaire.errors?.['required']">Ce champs est requis</span>
-        <span class="error" *ngIf="!commentaire.valid && commentaire.errors?.['minlength']">Ce champs est trop court</span>
+        <span class="error"
+              *ngIf="!commentaire.valid && commentaire.errors?.['minlength']">Ce champs est trop court</span>
         <span class="error" *ngIf="!commentaire.valid && commentaire.errors?.['maxlength']">Ce champs est long</span>
       </td>
     </tr>

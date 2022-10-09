@@ -1,5 +1,5 @@
 import {Directive, ElementRef, Input, Renderer2} from '@angular/core';
-import {Restaurant} from "../models/responses/restaurant.dto";
+import {Restaurant} from "../dtos/responses/restaurant.dto";
 
 @Directive({
   selector: '[appMoyenneColoration]'

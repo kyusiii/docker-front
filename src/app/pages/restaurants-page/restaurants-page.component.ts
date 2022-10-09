@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RestaurantService} from "../../services/restaurant.service";
-import {Restaurant} from "../../models/responses/restaurant.dto";
-import {RestaurantFormModel} from "../../models/restaurant-form.model";
+import {Restaurant} from "../../dtos/responses/restaurant.dto";
+import {RestaurantFormModel} from "../../dtos/restaurant-form.model";
 
 @Component({
   selector: 'app-restaurants-page',

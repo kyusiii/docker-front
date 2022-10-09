@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Evaluation} from "../../models/responses/evaluation.dto";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Evaluation} from "../../dtos/responses/evaluation.dto";
 
 @Component({
   selector: 'app-evaluation-table',
@@ -14,7 +14,8 @@ export class EvaluationTableComponent {
   @Output()
   public evaluationDeleted: EventEmitter<Evaluation> = new EventEmitter<Evaluation>();
 
-  constructor() { }
+  constructor() {
+  }
 
   public onEvaluationDeleted(evaluation: Evaluation): void {
     this.evaluationDeleted.emit(evaluation);

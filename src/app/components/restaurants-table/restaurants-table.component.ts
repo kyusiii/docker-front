@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Restaurant} from "../../models/responses/restaurant.dto";
+import {Component, Input} from '@angular/core';
+import {Restaurant} from "../../dtos/responses/restaurant.dto";
 import {Router} from "@angular/router";
 
 @Component({

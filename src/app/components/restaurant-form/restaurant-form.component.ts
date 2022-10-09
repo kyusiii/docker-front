@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {Restaurant} from "../../models/responses/restaurant.dto";
+import {Restaurant} from "../../dtos/responses/restaurant.dto";
 import {NgForm} from "@angular/forms";
-import {RestaurantFormModel} from "../../models/restaurant-form.model";
+import {RestaurantFormModel} from "../../dtos/restaurant-form.model";
 
 @Component({
   selector: 'app-restaurant-form',

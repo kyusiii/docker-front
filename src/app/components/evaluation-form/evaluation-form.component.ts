@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {EvaluationFormModel} from "../../models/evaluation-form.model";
+import {EvaluationFormModel} from "../../dtos/evaluation-form.model";
 import {NgForm} from "@angular/forms";
-import {Note} from "../../models/responses/evaluation.dto";
+import {Note} from "../../dtos/responses/evaluation.dto";
 
 @Component({
   selector: 'app-evaluation-form',

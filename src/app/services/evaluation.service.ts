@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Evaluation, Note} from "../models/responses/evaluation.dto";
+import {Evaluation, Note} from "../dtos/responses/evaluation.dto";
 import {environment} from "../../environments/environment";
-import {AddEvaluationDto} from "../models/requests/add-evaluation.dto";
+import {AddEvaluationDto} from "../dtos/requests/add-evaluation.dto";
 
 @Injectable({
   providedIn: 'root'

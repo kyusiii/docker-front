@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Restaurant} from "../../models/responses/restaurant.dto";
+import {Restaurant} from "../../dtos/responses/restaurant.dto";
 import {RestaurantService} from "../../services/restaurant.service";
-import {Evaluation} from "../../models/responses/evaluation.dto";
-import {RestaurantFormModel} from "../../models/restaurant-form.model";
+import {Evaluation} from "../../dtos/responses/evaluation.dto";
+import {RestaurantFormModel} from "../../dtos/restaurant-form.model";
 import {EvaluationService} from "../../services/evaluation.service";
-import {EvaluationFormModel} from "../../models/evaluation-form.model";
+import {EvaluationFormModel} from "../../dtos/evaluation-form.model";
 
 @Component({
   selector: 'app-restaurant-details',
