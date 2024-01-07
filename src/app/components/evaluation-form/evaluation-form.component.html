@@ -56,6 +56,15 @@
         <span class="error" *ngIf="!note.valid && note.errors?.['maxlength']">Ce champs est long</span>
       </td>
     </tr>
+    <tr>
+      <td> Illustration </td>
+      <td>
+        <input name="file" type="file" (change)="onIllustrationChange($event)">
+      </td>
+      <td>
+        <span class="error" *ngIf="!illustration">Ce champs est requis</span>
+      </td>
+    </tr>
   </table>
   <br/>
   <button type="submit">Valider</button>

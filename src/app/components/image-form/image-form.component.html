@@ -1,0 +1,4 @@
+<form #PhotoForm="ngForm" (ngSubmit)="onPhotoSubmit(PhotoForm)">
+  <input name="file" type="file" (change)="onPhotoChange($event)">
+  <button type="submit">Valider</button>
+</form>

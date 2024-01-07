@@ -4,4 +4,5 @@ export interface EvaluationFormModel {
   evaluateur: string;
   commentaire: string;
   note: Note;
+  illustration: File
 }

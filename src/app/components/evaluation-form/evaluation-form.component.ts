@@ -16,17 +16,25 @@ export class EvaluationFormComponent {
   public evaluateurInput: string = "";
   public commentaireInput: string = "";
   public noteInput: Note = 0;
+  public illustration?: File
 
   constructor() {
   }
 
   public onSubmit(form: NgForm): void {
-    if (form.valid) {
+    if (form.valid && this.illustration) {
       this.emitted.emit({
         evaluateur: this.evaluateurInput,
         commentaire: this.commentaireInput,
-        note: this.noteInput
+        note: this.noteInput,
+        illustration: this.illustration
       });
+    }
+  }
+
+  public onIllustrationChange(change: any): void {
+    if (change && change.target && change.target.files) {
+      this.illustration = change.target.files.item(0);
     }
   }
 

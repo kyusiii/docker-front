@@ -3,7 +3,8 @@ export interface Evaluation {
   id: number;
   evaluateur: string;
   commentaire: string;
-  note: Note
+  note: Note;
+  illustrationUrl?: string;
 
 }
 

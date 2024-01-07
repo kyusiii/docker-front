@@ -3,13 +3,19 @@
     <th>Nom</th>
     <th>Adresse</th>
     <th>Moyenne</th>
+    <th>Photo</th>
     <th>Actions</th>
   </tr>
   <tr *ngFor="let restaurant of restaurants" [appMoyenneColoration]="restaurant">
-    <td>{{restaurant.nom}}</td>
-    <td>{{restaurant.adresse}}</td>
+    <td>{{ restaurant.nom }}</td>
+    <td>{{ restaurant.adresse }}</td>
     <td *ngIf="restaurant.moyenne === -1">/</td>
-    <td *ngIf="restaurant.moyenne !== -1">{{restaurant.moyenne}}</td>
+    <td *ngIf="restaurant.moyenne !== -1">{{ restaurant.moyenne }}</td>
+    <td>
+      <span *ngIf="!restaurant.photoUrl">Chargement de la photo...</span>
+      <img *ngIf="restaurant.photoUrl" height="100" width="100" [src]="restaurant.photoUrl"
+           alt="Photo du restaurant {{restaurant.nom}}">
+    </td>
     <td>
       <button (click)="goToRestaurantDetail(restaurant)">Voir le détails</button>
     </td>

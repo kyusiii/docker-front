@@ -3,12 +3,18 @@
     <th>Auteur</th>
     <th>Commentaire</th>
     <th>Nombre d'étoiles</th>
+    <th>Illustration</th>
     <th>Actions</th>
   </tr>
   <tr *ngFor="let evaluation of evaluations">
-    <td>{{evaluation.evaluateur}}</td>
-    <td>{{evaluation.commentaire}}</td>
-    <td>{{evaluation.note}}</td>
+    <td>{{ evaluation.evaluateur }}</td>
+    <td>{{ evaluation.commentaire }}</td>
+    <td>{{ evaluation.note }}</td>
+    <td>
+      <span *ngIf="!evaluation.illustrationUrl">Chargement de l'illustration...</span>
+      <img *ngIf="evaluation.illustrationUrl" height="100" width="100" [src]="evaluation.illustrationUrl"
+           alt="Photo de l'evaluation">
+    </td>
     <td>
       <button (click)="onEvaluationDeleted(evaluation)">Supprimer l'évaluation</button>
     </td>

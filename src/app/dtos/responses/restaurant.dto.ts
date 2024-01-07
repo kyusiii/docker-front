@@ -7,5 +7,6 @@ export interface Restaurant {
   adresse: string;
   evaluations: Evaluation[];
   moyenne: number;
+  photoUrl?: string;
 
 }

@@ -2,8 +2,9 @@
 <h3 *ngIf="restaurantDoesNotExist">Le restaurant n'existe pas</h3>
 <div *ngIf="restaurant">
   <a routerLink="/restaurants">Retour à la lister des restaurants</a>
-  <h3>{{restaurant.nom}}</h3>
-  <h5>{{restaurant.adresse}}</h5>
+  <h3>{{ restaurant.nom }}</h3>
+  <h5>{{ restaurant.adresse }}</h5>
+  <img *ngIf="restaurant.photoUrl" width="100" height="100" [src]="restaurant.photoUrl">
   <h3>Evaluations</h3>
   <app-evaluation-table [evaluations]="restaurant.evaluations"
                         (evaluationDeleted)="deleteEvaluation($event)">
@@ -12,4 +13,6 @@
   <app-evaluation-form (emitted)="addEvaluation($event)"></app-evaluation-form>
   <h3>Editer le restaurant :</h3>
   <app-restaurant-form [restaurant]="restaurant" (emitted)="updateRestaurant($event)"></app-restaurant-form>
+  <h3>Changer la photo</h3>
+  <app-image-form (emitted)="uploadNewRestaurantPhoto($event)"></app-image-form>
 </div>

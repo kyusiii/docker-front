@@ -19,8 +19,6 @@ export class RestaurantDetailsComponent implements OnInit {
 
   public restaurant?: Restaurant;
 
-  public evaluationToEdit?: Evaluation;
-
   constructor(private activatedRoute: ActivatedRoute,
               private restaurantService: RestaurantService,
               private evaluationService: EvaluationService) {
@@ -36,6 +34,10 @@ export class RestaurantDetailsComponent implements OnInit {
             next: restaurant => {
               this.restaurant = restaurant;
               this.restaurantDoesNotExist = false;
+
+              restaurant.evaluations.forEach(evaluation => {
+                this.evaluationService.getEvaluationIllustration(restaurant.id, evaluation.id).subscribe(illustration => evaluation.illustrationUrl = illustration.url)
+              })
             },
             error: _ => {
               this.restaurant = undefined;
@@ -51,10 +53,15 @@ export class RestaurantDetailsComponent implements OnInit {
 
   public addEvaluation(nouvelleEvaluation: EvaluationFormModel): void {
     if (this.restaurant) {
-      this.evaluationService.addEvaluation(this.restaurant.id, nouvelleEvaluation.evaluateur, nouvelleEvaluation.commentaire, nouvelleEvaluation.note).subscribe({
+      this.evaluationService.addEvaluation(this.restaurant.id, nouvelleEvaluation.evaluateur, nouvelleEvaluation.commentaire, nouvelleEvaluation.note, nouvelleEvaluation.illustration).subscribe({
         next: value => {
           if (this.restaurant) {
-            this.restaurant.evaluations.push(value);
+            this.evaluationService.getEvaluationIllustration(this.restaurant.id, value.id).subscribe(illustrationUrl => {
+              if (this.restaurant) {
+                value.illustrationUrl = illustrationUrl.url;
+                this.restaurant.evaluations.push(value);
+              }
+            })
           }
         }
       });
@@ -82,6 +89,12 @@ export class RestaurantDetailsComponent implements OnInit {
         }
       }
     });
+  }
+
+  public uploadNewRestaurantPhoto(photo: File): void {
+    if (this.restaurant) {
+      this.restaurantService.putRestaurantPhoto(this.restaurant.id, photo);
+    }
   }
 
 }

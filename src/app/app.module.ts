@@ -12,6 +12,7 @@ import {RestaurantsTableComponent} from './components/restaurants-table/restaura
 import {RestaurantFormComponent} from './components/restaurant-form/restaurant-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MoyenneColorationDirective} from './directives/moyenne-coloration.directive';
+import {ImageFormComponent} from "./components/image-form/image-form.component";
 
 @NgModule({
   declarations: [
@@ -25,13 +26,14 @@ import {MoyenneColorationDirective} from './directives/moyenne-coloration.direct
     RestaurantFormComponent,
     MoyenneColorationDirective
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ImageFormComponent
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
