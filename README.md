@@ -6,16 +6,16 @@
 
 ## Install
 
-```npm install```
+`npm install`
 
 ## Dev / Local
 
-```npm run start```
+`npm run start`
 => uses DEV env variables
 
 ## Build
 
-```npm run build```
+`npm run build`
 => uses PROD env variables
 
 Generates the build in the dist folder
@@ -24,8 +24,8 @@ Generates the build in the dist folder
 
 ### Dev / Local
 
-see ```src/environments/environment.ts```
+see `src/environments/environment.ts`
 
 ### Prod
 
-see ```src/environments/environment.prod.ts```
+see `src/environments/environment.prod.ts`
