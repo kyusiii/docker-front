@@ -1,7 +1,18 @@
+FROM node:21 as builder
+
+WORKDIR /application
+
+COPY . .
+
+RUN npm install
+RUN npm run build
+
+
+
 FROM nginx
 
 COPY nginx/ /etc/nginx/
 
-COPY dist /usr/share/nginx/html
+COPY entrypoint.sh /docker-entrypoint.d/entrypoint.sh
 
-EXPOSE 80
+COPY --from=builder /application/dist/* /usr/share/nginx/html

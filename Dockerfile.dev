@@ -1,0 +1,9 @@
+FROM node:21
+
+WORKDIR /application
+
+COPY . .
+
+RUN npm install
+
+CMD ["npm", "run", "start"]

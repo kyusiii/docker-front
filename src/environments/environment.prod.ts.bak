@@ -2,5 +2,5 @@ import {Environment} from "./environment.interface";
 
 export const environment: Environment = {
   production: true,
-  backendUrl: '{{ BACKEND_URL }}'
+  backendUrl: 'http://localhost:8080'
 };
